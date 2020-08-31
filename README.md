@@ -36,7 +36,7 @@ Thirdly, use DMA regularization in trainging procedure:
 
         loss.backward() 
  
-# To realize deterministic training, following code is needed:
+Lastly, to realize deterministic training, following code is needed:
 
         import torch
         import torch.backends.cudnn as cudnn
@@ -58,8 +58,8 @@ Thirdly, use DMA regularization in trainging procedure:
         # still need to set the work_init_fn to random.seed in train_dataloader, if multi numworkers
         trainloader = data.DataLoader(trainset, batch_size=args.train_batch, shuffle=True, num_workers=args.workers, worker_init_fn=random.seed)
         
-# License
-This code is released under the MIT License (refer to the LICENSE file for details).
-
 # Notes      
 The usage in other deep learning library, is similar. And the default coefficient is set to 0.5. However, it may need to be tuned according to different task, model, and dataset.
+
+# License
+This code is released under the MIT License (refer to the LICENSE file for details).
